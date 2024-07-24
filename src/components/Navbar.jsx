@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+// import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -18,7 +18,7 @@ const Navbar = () => {
                 <li className='p-5 transition-transform transform hover:scale-110'><a href='#contact'>Contact</a></li>
 
             </ul>
-            <div onClick={handleNav} className='block md:hidden'>
+            {/* <div onClick={handleNav} className='block md:hidden'>
                 {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
             </div>
 
@@ -31,7 +31,7 @@ const Navbar = () => {
                     <li className='p-5 transition-transform transform hover:scale-110'><a href='#contact'>Contact</a></li>
                 </ul>
 
-            </div>
+            </div> */}
         </div>
     );
 };
