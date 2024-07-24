@@ -8,7 +8,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className='bg-black text-gray-100 h-[100px] max-w-[1200px] mx-auto flex justify-between items-center'>
+        <div className='relative z-50 bg-black bg-opacity-50 text-gray-100 h-[100px] max-w-[1200px] mx-auto flex justify-between items-center'>
             <h1 className='text-3xl font-bold primary-color ml-0'>AKSHAT'S PORTFOLIO</h1>
 
             {/* Hamburger Menu Button */}
@@ -34,8 +34,8 @@ const Navbar = () => {
                 <li className='p-5 transition-transform transform hover:scale-110'><a href='#contact'>Contact</a></li>
             </ul>
 
-
-            <div className={nav ? 'fixed h-full left-0 top-0 w-[60%] bg-[#202121] ease-in-out duration-500' : 'fixed left-[-100%]'}>
+            {/* Mobile Menu */}
+            <div className={nav ? 'fixed h-full left-0 top-0 w-[60%] bg-[#202121] bg-opacity-80 ease-in-out duration-500' : 'fixed left-[-100%]'}>
                 <h1 className='text-3xl primary-color m-4 scroll-smooth'>Akshat's Portfolio</h1>
                 <ul className='p-8 text-2xl'>
                     <li className='p-5 transition-transform transform hover:scale-110'><a href='#about'>About</a></li>
