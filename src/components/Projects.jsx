@@ -15,10 +15,10 @@ const Projects = () => {
                             </a>
                             Encryption Decryption using Sockets
                         </h3>
-                        <div className='font-serif mt-2 text-sm overflow-y-auto h-[300px] py-2 text-left'>
-                            - Server sends ENCRYPTED file to client upon    request, the file is DECRYPYED using private key <br></br>
-                            - Used Secure Socket Layering (SSL) in TCP<br></br>
-                            - Made using Python<br></br>
+                        <div className='font-serif mt-2 text-sm overflow-y-auto h-auto py-3'>
+                            - Server sends ENCRYPTED file to client upon request, the file is DECRYPYED using private key
+                            - Used Secure Socket Layering (SSL) in TCP
+                            - Made using Python
 
                         </div>
                     </div>
