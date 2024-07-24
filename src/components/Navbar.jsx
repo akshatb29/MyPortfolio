@@ -7,8 +7,14 @@ const Navbar = () => {
         setNav(!nav);
     };
 
+    const closeNav = (e) => {
+        if (e.target.id === 'overlay') {
+            setNav(false);
+        }
+    };
+
     return (
-        <div className='relative z-50 bg-black bg-opacity-50 text-gray-100 h-[100px] max-w-[1200px] mx-auto flex justify-between items-center'>
+        <div className='relative z-50 bg-black text-gray-100 h-[100px] max-w-[1200px] mx-auto flex justify-between items-center'>
             <h1 className='text-3xl font-bold primary-color ml-0'>AKSHAT'S PORTFOLIO</h1>
 
             {/* Hamburger Menu Button */}
@@ -34,14 +40,17 @@ const Navbar = () => {
                 <li className='p-5 transition-transform transform hover:scale-110'><a href='#contact'>Contact</a></li>
             </ul>
 
+            {/* Overlay */}
+            {nav && <div id='overlay' className='fixed inset-0 bg-black bg-opacity-50 z-40' onClick={closeNav}></div>}
+
             {/* Mobile Menu */}
-            <div className={nav ? 'fixed h-full left-0 top-0 w-[60%] bg-black bg-opacity-100 ease-in-out duration-500' : 'fixed left-[-100%]'}>
+            <div className={nav ? 'fixed h-full left-0 top-0 w-[60%] bg-black bg-opacity-100 ease-in-out duration-500 z-50' : 'fixed left-[-100%]'}>
                 <h1 className='text-3xl primary-color m-4 scroll-smooth'>Akshat's Portfolio</h1>
                 <ul className='p-8 text-2xl'>
-                    <li className='p-5 transition-transform transform hover:scale-110'><a href='#about'>About</a></li>
-                    <li className='p-5 transition-transform transform hover:scale-110'><a href='#skills'>Skills</a></li>
-                    <li className='p-5 transition-transform transform hover:scale-110'><a href='#projects'>Projects</a></li>
-                    <li className='p-5 transition-transform transform hover:scale-110'><a href='#contact'>Contact</a></li>
+                    <li className='p-5 transition-transform transform hover:scale-110'><a href='#about' onClick={handleNav}>About</a></li>
+                    <li className='p-5 transition-transform transform hover:scale-110'><a href='#skills' onClick={handleNav}>Skills</a></li>
+                    <li className='p-5 transition-transform transform hover:scale-110'><a href='#projects' onClick={handleNav}>Projects</a></li>
+                    <li className='p-5 transition-transform transform hover:scale-110'><a href='#contact' onClick={handleNav}>Contact</a></li>
                 </ul>
             </div>
         </div>
