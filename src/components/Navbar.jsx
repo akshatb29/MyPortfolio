@@ -35,7 +35,7 @@ const Navbar = () => {
             </ul>
 
             {/* Mobile Menu */}
-            <div className={nav ? 'fixed h-full left-0 top-0 w-[60%] bg-[#202121] bg-opacity-80 ease-in-out duration-500' : 'fixed left-[-100%]'}>
+            <div className={nav ? 'fixed h-full left-0 top-0 w-[60%] bg-black bg-opacity-100 ease-in-out duration-500' : 'fixed left-[-100%]'}>
                 <h1 className='text-3xl primary-color m-4 scroll-smooth'>Akshat's Portfolio</h1>
                 <ul className='p-8 text-2xl'>
                     <li className='p-5 transition-transform transform hover:scale-110'><a href='#about'>About</a></li>
