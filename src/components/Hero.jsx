@@ -40,7 +40,7 @@ const Hero = () => {
 
                 <div className='my-8'>
                     <a
-                        href="/" // Update this with the actual resume path or URL if needed
+                        href="file:///D:/downloads/Akshat_bhandari_resume.pdf"
                         className="px-6 py-3 w-full rounded-xl mr-4 bg-gradient-to-br from-orange-500 to-pink-500 text-white"
                     >
                         Download Resume
