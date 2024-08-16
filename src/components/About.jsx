@@ -11,8 +11,7 @@ const About = () => {
                     <div className="my-auto mx-6">
                         <h2 className="text-4xl font-bold mb-4 primary-color">ABOUT ME</h2>
                         <p className="text-base lg:text-lg">
-                            Hello, My name is Akshat Bhandari and I am currently pursuing my BTech in Computer Science at PES University in Bengaluru. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia inventore accusantium non nobis, qui in magnam facere eos porro quae ad minima sequi, veritatis aspernatur officia. Impedit sed quo suscipit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis fugiat, nihil id asperiores corporis eius autem illum magni quae vitae natus quidem laudantium soluta. Magni velit nobis aliquam error eligendi!
-
+                            Hello, My name is Akshat Bhandari and I am currently pursuing my BTech in Computer Science at PES University in Bengaluru. I love designing and building solutions that make a difference. I'm always eager to learn, start new projects, and tackle complex problems, especially when it comes to data structures, algorithms, and machine learning. My passion lies in finding intuitive ways to solve challenges and continuously grow through every project I take on.
 
                         </p>
                     </div>
