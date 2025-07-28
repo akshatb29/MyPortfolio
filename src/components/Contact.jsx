@@ -18,11 +18,11 @@ const Contact = () => {
                             </div>
                             <div className="flex items-center mb-2">
                                 <p className="font-semibold mr-2">GitHub:</p>
-                                <a href="https://github.com/akshatb29" target="_blank" className="text-zinc-500 hover:underline">GitHub Profile</a>
+                                <a href="https://github.com/akshatb29" target="_blank" className="text-zinc-500 hover:underline">https://github.com/akshatb29</a>
                             </div>
                             <div className="flex items-center mb-2">
                                 <p className="font-semibold mr-2">LinkedIn:</p>
-                                <a href="https://www.linkedin.com/in/akshat-bhandari-a7492b24b/" target="_blank" className="text-zinc-500 hover:underline">LinkedIn Profile</a>
+                                <a href="https://www.linkedin.com/in/akshat-bhandari-a7492b24b/" target="_blank" className="text-zinc-500 hover:underline">www.linkedin.com/in/akshatb29</a>
                             </div>
                         </div>
                     </div>
