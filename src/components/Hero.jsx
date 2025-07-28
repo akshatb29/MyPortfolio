@@ -35,7 +35,7 @@ const Hero = () => {
                 </div>
 
                 <p className='text-white sm:text-lg lg:text-xl mt-0'>
-                    I'm a 3<sup>rd</sup> year student pursuing BTech in Computer Science at PES University
+                    I'm a 4<sup>th</sup> year student Pursuing BTech in Computer Science at PES University
                 </p>
 
                 <div className='my-8'>
