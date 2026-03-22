@@ -66,15 +66,24 @@ const Skills = () => {
                     SKILLS AND TECHNOLOGIES
                 </h2>
 
-                {/* Mobile: pill grid */}
-                <div className="md:hidden flex flex-wrap justify-center gap-3">
-                    {cloudItems.map(({ text, color, bold }) => (
-                        <span
-                            key={text}
-                            className={`px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm ${color} ${bold ? 'font-bold' : 'font-medium'}`}
-                        >
-                            {text}
-                        </span>
+                {/* Mobile: clustered groups */}
+                <div className="md:hidden flex flex-col gap-6">
+                    {[
+                        { label: 'ML', color: 'text-sky-400', border: 'border-sky-500/30', items: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'Pandas', 'NumPy', 'Docker'] },
+                        { label: 'GENAI', color: 'text-emerald-400', border: 'border-emerald-500/30', items: ['LangGraph', 'LangChain', 'RAG', 'DSPy', 'FAISS', 'Prompt Engineering', 'Agentic Frameworks'] },
+                        { label: 'FULLSTACK', color: 'text-purple-400', border: 'border-purple-500/30', items: ['React', 'Next.js', 'JavaScript', 'Node.js', 'FastAPI', 'SQL', 'REST APIs'] },
+                        { label: 'DISTRIBUTED', color: 'text-pink-400', border: 'border-pink-500/30', items: ['Kafka', 'HDFS', 'Redis'] },
+                    ].map(({ label, color, border, items }) => (
+                        <div key={label} className={`rounded-2xl border ${border} bg-white/[0.02] p-4`}>
+                            <p className={`text-xs font-extrabold tracking-widest uppercase mb-3 ${color}`}>{label}</p>
+                            <div className="flex flex-wrap gap-2">
+                                {items.map(item => (
+                                    <span key={item} className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300 font-medium">
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
                     ))}
                 </div>
 
