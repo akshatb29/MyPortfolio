@@ -2,19 +2,214 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar              { width: 5px; }
+::-webkit-scrollbar-track        { background: #000; }
+::-webkit-scrollbar-thumb        { background: #db2777; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover  { background: #f472b6; }
+
 .primary-color {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-600 
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-600;
 }
 
 body {
     background-color: black;
 }
 
-.primary-color {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-pink-600 
-
-}
-
 html {
     scroll-behavior: smooth;
+}
+
+/* ── Hero entrance (fires on load, no observer needed) ── */
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0);    }
+}
+@keyframes fadeSlideLeft {
+    from { opacity: 0; transform: translateX(-32px); }
+    to   { opacity: 1; transform: translateX(0);     }
+}
+@keyframes fadeSlideRight {
+    from { opacity: 0; transform: translateX(32px); }
+    to   { opacity: 1; transform: translateX(0);    }
+}
+
+.anim-up    { animation: fadeSlideUp    0.7s ease-out both; }
+.anim-left  { animation: fadeSlideLeft  0.7s ease-out both; }
+.anim-right { animation: fadeSlideRight 0.7s ease-out both; }
+
+/* ── Typewriter cursor blink ── */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+.cursor-blink {
+    animation: blink 1s step-end infinite;
+}
+
+/* ── Word cloud floating animations ── */
+@keyframes float1 {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+}
+@keyframes float2 {
+    0%, 100% { transform: translate(0px,  0px); }
+    33%       { transform: translate(7px,  -9px); }
+    66%       { transform: translate(-5px, -5px); }
+}
+@keyframes float3 {
+    0%, 100% { transform: translate(0px,  0px); }
+    40%       { transform: translate(-7px,  9px); }
+    70%       { transform: translate(5px,  -4px); }
+}
+@keyframes float4 {
+    0%, 100% { transform: translate(0px, 0px); }
+    25%       { transform: translate(8px, -7px); }
+    75%       { transform: translate(-6px, 8px); }
+}
+
+/* ── Loading bar ── */
+@keyframes loadBar {
+    from { width: 0%; }
+    to   { width: 100%; }
+}
+
+/* ── Scroll reveal (toggled by IntersectionObserver) ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ════════════════════════════════════════════════════
+   ABOUT SECTION
+   ════════════════════════════════════════════════════ */
+
+/* ── Staggered entrance animations ── */
+.about-stagger-1,
+.about-stagger-2,
+.about-stagger-3,
+.about-stagger-4,
+.about-stagger-5,
+.about-stagger-6,
+.about-stagger-7,
+.about-stagger-8,
+.about-stagger-9 {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.about-stagger-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+.about-stagger-1 { transition-delay:  60ms; }
+.about-stagger-2 { transition-delay: 130ms; }
+.about-stagger-3 { transition-delay: 200ms; }
+.about-stagger-4 { transition-delay: 280ms; }
+.about-stagger-5 { transition-delay: 350ms; }
+.about-stagger-6 { transition-delay: 430ms; }
+.about-stagger-7 { transition-delay: 510ms; }
+.about-stagger-8 { transition-delay: 590ms; }
+.about-stagger-9 { transition-delay: 660ms; }
+
+/* ── Animated spinning-conic gradient border ── */
+@keyframes aboutGlowSpin {
+    0%   { --about-angle: 0deg;   }
+    100% { --about-angle: 360deg; }
+}
+@property --about-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+.about-glow-border {
+    --about-angle: 0deg;
+    animation: aboutGlowSpin 4s linear infinite;
+    background: conic-gradient(
+        from var(--about-angle),
+        transparent 55%,
+        rgba(236,72,153,0.8) 70%,
+        rgba(219,39,119,0.9) 80%,
+        rgba(249,115,22,0.5) 90%,
+        transparent 95%
+    );
+}
+
+/* ── Glitch heading effect ── */
+@keyframes aboutGlitch1 {
+    0%   { clip-path: inset(10% 0 80% 0); transform: translate(-3px, 0);  }
+    20%  { clip-path: inset(60% 0 10% 0); transform: translate(3px, 0);   }
+    40%  { clip-path: inset(30% 0 50% 0); transform: translate(-2px, 0);  }
+    60%  { clip-path: inset(80% 0 5%  0); transform: translate(2px, 0);   }
+    80%  { clip-path: inset(5%  0 70% 0); transform: translate(-3px, 0);  }
+    100% { clip-path: inset(10% 0 80% 0); transform: translate(0, 0);     }
+}
+@keyframes aboutGlitch2 {
+    0%   { clip-path: inset(50% 0 30% 0); transform: translate(3px, 0);   }
+    25%  { clip-path: inset(15% 0 65% 0); transform: translate(-3px, 0);  }
+    50%  { clip-path: inset(70% 0 10% 0); transform: translate(2px, 0);   }
+    75%  { clip-path: inset(25% 0 55% 0); transform: translate(-2px, 0);  }
+    100% { clip-path: inset(50% 0 30% 0); transform: translate(0, 0);     }
+}
+
+.about-glitch,
+.glitch-heading {
+    position: relative;
+}
+.about-glitch::before,
+.about-glitch::after,
+.glitch-heading::before,
+.glitch-heading::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: inherit;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #f97316, #db2777);
+    pointer-events: none;
+}
+.about-glitch::before,
+.glitch-heading::before {
+    animation: aboutGlitch1 5s steps(1) infinite;
+    opacity: 0.6;
+    mix-blend-mode: screen;
+}
+.about-glitch::after,
+.glitch-heading::after {
+    animation: aboutGlitch2 5s steps(1) infinite;
+    animation-delay: 0.5s;
+    opacity: 0.4;
+    mix-blend-mode: screen;
+}
+
+/* ── Ticker tape marquee ── */
+@keyframes aboutTicker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.about-ticker-track {
+    animation: aboutTicker 28s linear infinite;
+    width: max-content;
+}
+.about-ticker-track:hover {
+    animation-play-state: paused;
+}
+
+/* ── Pulsing online dot ── */
+@keyframes aboutPulse {
+    0%, 100% { opacity: 1;   transform: scale(1);   }
+    50%       { opacity: 0.5; transform: scale(1.4); }
+}
+.about-pulse-dot {
+    animation: aboutPulse 2s ease-in-out infinite;
 }
