@@ -64,7 +64,17 @@ const Hero = () => {
             </div>
 
             {/* Text content */}
-            <div className='sm:col-span-2 my-auto flex flex-col'>
+            <div className='sm:col-span-2 my-auto flex flex-col relative'>
+                {/* Social icons — vertical on the right (desktop) */}
+                <div className='absolute right-0 top-0 flex flex-col items-center gap-4 mt-1 anim-right' style={{ animationDelay: '0.8s' }}>
+                    <a href="https://github.com/akshatb29" target="_blank" rel="noopener noreferrer" className='transition-transform hover:scale-110'>
+                        <img src={github1} alt='GitHub' className='h-9 w-9' />
+                    </a>
+                    <a href='https://www.linkedin.com/in/akshat-bhandari-a7492b24b/' target='_blank' rel="noopener noreferrer" className='transition-transform hover:scale-110'>
+                        <img src={linkedin1} alt='LinkedIn' className='h-9 w-9' />
+                    </a>
+                </div>
+
                 <h1 className='text-white text-4xl sm:text-5xl lg:text-8xl font-extrabold anim-up' style={{ animationDelay: '0.2s' }}>
                     <span className='primary-color'>Hello!<br /> I am Akshat.</span>
                 </h1>
@@ -96,15 +106,6 @@ const Hero = () => {
                     </a>
                 </div>
 
-                {/* Social icons — horizontal row */}
-                <div className='flex items-center gap-4 mt-6 anim-right' style={{ animationDelay: '0.8s' }}>
-                    <a href="https://github.com/akshatb29" target="_blank" rel="noopener noreferrer" className='transition-transform hover:scale-110'>
-                        <img src={github1} alt='GitHub' className='h-9 w-9' />
-                    </a>
-                    <a href='https://www.linkedin.com/in/akshat-bhandari-a7492b24b/' target='_blank' rel="noopener noreferrer" className='transition-transform hover:scale-110'>
-                        <img src={linkedin1} alt='LinkedIn' className='h-9 w-9' />
-                    </a>
-                </div>
             </div>
         </div>
     );
